@@ -1,105 +1,103 @@
 # Northstar CPG: Marketing Measurement, Incrementality & Pricing Optimization
 
-From explaining historical sales to understanding what actually drives them.
+### From explaining historical sales to understanding what actually drives them.
 
-This repository shares a complete analytics project that uses synthetic Consumer Packaged Goods (CPG) data to explore Bayesian Marketing Mix Modeling (MMM), geo incrementality experiments, pricing elasticity, and profit optimization.
+This repository documents an ongoing analytics project exploring **Bayesian Marketing Mix Modeling (MMM), geo incrementality experiments, pricing elasticity, and profit optimization** using synthetic Consumer Packaged Goods (CPG) data.
 
-I first explored MMM in 2022, focusing on modeling methods and how different channels contribute. Since then, my work with pricing optimization and incrementality testing has changed how I approach marketing measurement.
+I first explored MMM in 2022, focusing on the modeling methods and how different marketing channels contribute to sales. Since then, working more closely with pricing optimization and incrementality testing has changed how I approach marketing measurement.
 
-Even if a model explains past sales well, how sure can we be that marketing actually caused those sales?
+Even if a model explains historical sales well, how confident can we be that marketing actually *caused* the sales attributed to it?
 
-That question led to the starting point for this project.
+That question became the starting point for this project.
 
 ## Project Overview
 
-The analysis is based on a fictitious beverage brand called Northstar Hydration and includes synthetic weekly sales and commercial data from 20 different geographic markets over a period of 104 weeks.
+The analysis uses a fictional beverage brand, **Northstar Hydration**, with synthetic weekly sales and commercial data from **20 geographic markets over 104 weeks**.
 
-The dataset features:
+The dataset includes:
 
-* Marketing investment: CTV, Paid Social, Retail Media, and Search
-* Commercial drivers: Product pricing, promotions, retailer distribution, and competitor pricing
-* Business outcomes: Unit sales, revenue, and profitability
-* External factors: Seasonality and demand variation
+- **Marketing investment:** CTV, Paid Social, Retail Media, and Search
+- **Commercial drivers:** Product pricing, promotions, retailer distribution, and competitor pricing
+- **Business outcomes:** Unit sales, revenue, and profitability
+- **External factors:** Seasonality and demand variation
 
-With the help of the synthetic environment I am able to make realistic marketing decisions, carry out experiments, and finally compare the model estimates with the known underlying effects without employing those effects when estimating.
+The synthetic environment makes it possible to simulate marketing decisions, run experiments, and ultimately compare estimates with the known underlying causal effects—without using those effects during estimation.
 
 ## Research Workflow
 
-The project progresses from observational modelling to validation through experimental and business decision-making.
+The project moves from observational modeling to experimental evidence and, eventually, business decision-making.
 
-Column 1	Column 2	Column 3
-Stage	Analysis	Notebook
-01	Synthetic CPG Data Generation	Notebook 01
-02	Exploratory Data Analysis	Notebook 02
-03	Bayesian Marketing Mix Modeling	Notebook 03
-04	Geo Incrementality Experiment	Notebook 04
+| Stage | Analysis | Notebook |
+|:---:|---|---|
+| 01 | Synthetic CPG Data Generation | [Notebook 01](notebooks/01-data-generation.ipynb) |
+| 02 | Exploratory Data Analysis | [Notebook 02](notebooks/02-exploration.ipynb) |
+| 03 | Bayesian Marketing Mix Modeling | [Notebook 03](notebooks/03-bayesian-mmm.ipynb) |
+| 04 | Geo Incrementality Experiment | [Notebook 04](notebooks/04-geo-incrementality.ipynb) |
 
+**Planned next steps:** Calibrate the MMM using experimental evidence, estimate price elasticity, analyze pricing and media scenarios, and optimize for profit.
 
-The next steps will be to carry out an experimental calibration of the MMM, to estimate price elasticity, to carry out scenario analysis, and to optimise profits.
+The notebooks are developed in Google Colab and are intended to include saved outputs, visualizations, and explanations of key analytical decisions.
 
-The notebooks are developed using Google Colab and are intended to contain the saved outputs, the visualizations, and explanations of the analytical decisions.
+## Initial Findings: MMM vs. Geo Incrementality
 
-Initial Findings: MMM vs. Geo Incrementality
+The first analysis compares two estimates of incremental units from additional Paid Social investment:
 
-The first analysis looks at two estimates of incremental Paid Social sales:
+1. A **Bayesian MMM** fitted on historical sales and marketing data.
+2. A **simulated geo experiment** with ten matched market pairs, an eight-week test, and a randomized **40% increase in Paid Social spend** in treatment markets.
 
-1. A Bayesian MMM fitted on historical sales and marketing data.
-2. A geo experiment was simulated for ten matched market pairs, involving an eight-week trial during which Paid Social investment in the treatment markets was increased by 40% at random.
+### Results
 
-## Results
+| Method | Estimated Incremental Units | 95% Interval |
+|---|---:|---:|
+| Baseline Bayesian MMM | 6,195 | [265, 27,121] (posterior interval) |
+| Geo Experiment | 31,600 | [-143,734, 207,554] (bootstrap confidence interval) |
 
-Column 1	Column 2	Column 3
-Method	Estimated Incremental Units	95% Interval
-Baseline Bayesian MMM	6,195	[265, 27,121]
-Geo Experiment	31,600	[-143,734, 207,554]
-
-Despite estimating the impact of the same intervention, the approaches produced substantially different point estimates.
+Although both approaches estimate the impact of the same intervention, their point estimates differ substantially.
 
 The comparison highlights two distinct measurement challenges:
 
-Identification risk in MMM: Historical data may not clearly separate marketing’s effect from expected demand, promotions, distribution changes, or other related factors.
+- **Identification risk in MMM:** Historical data may not fully separate marketing's causal effect from expected demand, promotions, distribution changes, and other correlated factors.
+- **Precision risk in experiments:** Randomization strengthens causal identification, but a small experiment can still produce a highly uncertain estimate.
 
-Precision risk in experiments: Randomization helps identify cause and effect, but small experiments can still lead to uncertain results.
+Importantly, the uncertainty intervals overlap. The difference between the point estimates alone does not establish that the methods are statistically inconsistent.
 
-Importantly, the uncertainty intervals overlap. The difference in point estimates alone does not establish that the two methods are statistically inconsistent.
+The central lesson is that **MMM provides breadth, while experiments provide causal anchors**. Combining observational and experimental evidence may create a more decision-useful measurement framework than relying on either method independently.
 
-The central learning is that MMM provides breadth, while experiments provide causal anchors. Combining observational and experimental evidence may create a more useful measurement framework than relying on either approach independently.
+## Articles & Research Notes
 
-Articles & Research Notes
+Alongside the notebooks, I'm documenting the analytical process in a series of technical articles.
 
-Alongside the notebooks, I’m documenting the analytical process in a series of technical articles.
+**Article 1: When MMM and Incrementality Disagree: What Is Each Actually Telling Us?**
 
-Article 1: When MMM and Incrementality Disagree: What Is Each Actually Telling Us?
+Why good model fit doesn't guarantee causal attribution, and what a geo experiment can reveal.
 
-Exploring why strong model fit does not guarantee causal attribution, and what a geo experiment can reveal.
+*[Medium article link coming soon.](https://medium.com/@smitmalik/when-mmm-and-incrementality-disagree-what-is-each-actually-telling-us-edff2d0a7499)*
 
-Medium publication link to be added.
+**Upcoming articles:**
 
-Upcoming articles
+- **Article 2:** Calibrating MMM With Incrementality Tests
+- **Article 3:** Bringing Pricing Into the Measurement Framework
+- **Article 4:** From Measurement to Decisioning: Optimizing Price, Promotion and Media for Profit
 
-* Article 2: Calibrating MMM With Incrementality Tests
-* Article 3: Bringing Pricing Into the Measurement Framework
-* Article 4: From Measurement to Decisioning: Optimizing Price, Promotion and Media for Profit
+Markdown copies of the articles will be maintained in the [`articles/`](articles/) directory.
 
-Markdown copies of the articles will be maintained in the articles/ directory.
+## Reproducing the Analysis
 
-Reproducing the Analysis
+The notebooks are designed to be run in order, starting with synthetic data generation and progressing through exploratory analysis, the baseline MMM, and the geo experiment.
 
-The notebooks are designed to be executed sequentially, beginning with synthetic data generation and continuing through the baseline MMM and geo experiment.
+You can also **view the notebooks directly on GitHub** to inspect saved outputs and visualizations without rerunning the analysis.
 
-To explore the results without rerunning the analysis, open the notebooks directly on GitHub to view their saved outputs and visualizations.
+Package dependencies and detailed setup instructions will be added to `requirements.txt` and this README as the project develops.
 
-Package dependencies and setup instructions will be finalized in requirements.txt.
+## Earlier Work
 
-Earlier Work
+This project builds on my 2022 exploration of Bayesian Marketing Mix Modeling using PyMC3:
 
-This project builds on my earlier exploration of Bayesian Marketing Mix Modeling with PyMC3 in 2022.
+[MMM-PyMC3-Marketing — Original GitHub Project](https://github.com/smmalik98/MMM-PyMC3-Marketing)
 
-MMM-PyMC3-Marketing — Original GitHub Project
+## Notes
 
-Notes
-
-* All business and consumer data are synthetic.
-* The true data-generating effects are excluded from baseline model fitting and experimental estimation.
-* Results are intended to demonstrate measurement principles and analytical trade-offs, not to represent real commercial performance.
-* The repository will be expanded as additional modeling and experimentation stages are completed.
+- All business and consumer data are **synthetic**.
+- The hidden data-generating effects were excluded from baseline model fitting and experimental estimation.
+- Results illustrate measurement principles and analytical trade-offs; they do not represent real commercial performance.
+- The repository will expand as further modeling and experimentation stages are completed.
