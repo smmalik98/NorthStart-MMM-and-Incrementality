@@ -29,10 +29,10 @@ The project moves from observational modeling to experimental evidence and, even
 
 | Stage | Analysis | Notebook |
 |:---:|---|---|
-| 01 | Synthetic CPG Data Generation | [Notebook 01]([notebooks/01-data-generation.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/01_build_northstar_cpg_world-2.ipynb)) |
-| 02 | Exploratory Data Analysis | [Notebook 02]([notebooks/02-exploration.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/02_exploratory_commercial_analysis-2.ipynb)) |
-| 03 | Bayesian Marketing Mix Modeling | [Notebook 03]([notebooks/03-bayesian-mmm.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/03_baseline_observational_mmm-2.ipynb)) |
-| 04 | Geo Incrementality Experiment | [Notebook 04]([notebooks/04-geo-incrementality.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/04_geo_incrementality_vs_mmm-2.ipynb)) |
+| 01 | Synthetic CPG Data Generation | [Notebook 01](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/01_build_northstar_cpg_world-2.ipynb)) |
+| 02 | Exploratory Data Analysis | [Notebook 02](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/02_exploratory_commercial_analysis-2.ipynb) |
+| 03 | Bayesian Marketing Mix Modeling | [Notebook 03](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/03_baseline_observational_mmm-2.ipynb) |
+| 04 | Geo Incrementality Experiment | [Notebook 04](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/04_geo_incrementality_vs_mmm-2.ipynb) |
 
 **Planned next steps:** Calibrate the MMM using experimental evidence, estimate price elasticity, analyze pricing and media scenarios, and optimize for profit.
 
