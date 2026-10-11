@@ -29,10 +29,10 @@ The project moves from observational modeling to experimental evidence and, even
 
 | Stage | Analysis | Notebook |
 |:---:|---|---|
-| 01 | Synthetic CPG Data Generation | [Notebook 01](notebooks/01-data-generation.ipynb) |
-| 02 | Exploratory Data Analysis | [Notebook 02](notebooks/02-exploration.ipynb) |
-| 03 | Bayesian Marketing Mix Modeling | [Notebook 03](notebooks/03-bayesian-mmm.ipynb) |
-| 04 | Geo Incrementality Experiment | [Notebook 04](notebooks/04-geo-incrementality.ipynb) |
+| 01 | Synthetic CPG Data Generation | [Notebook 01]([notebooks/01-data-generation.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/01_build_northstar_cpg_world-2.ipynb)) |
+| 02 | Exploratory Data Analysis | [Notebook 02]([notebooks/02-exploration.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/02_exploratory_commercial_analysis-2.ipynb)) |
+| 03 | Bayesian Marketing Mix Modeling | [Notebook 03]([notebooks/03-bayesian-mmm.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/03_baseline_observational_mmm-2.ipynb)) |
+| 04 | Geo Incrementality Experiment | [Notebook 04]([notebooks/04-geo-incrementality.ipynb](https://github.com/smmalik98/NorthStart-MMM-and-Incrementality/blob/main/notebooks/04_geo_incrementality_vs_mmm-2.ipynb)) |
 
 **Planned next steps:** Calibrate the MMM using experimental evidence, estimate price elasticity, analyze pricing and media scenarios, and optimize for profit.
 
@@ -71,7 +71,7 @@ Alongside the notebooks, I'm documenting the analytical process in a series of t
 
 Why good model fit doesn't guarantee causal attribution, and what a geo experiment can reveal.
 
-*[Medium article link coming soon.](https://medium.com/@smitmalik/when-mmm-and-incrementality-disagree-what-is-each-actually-telling-us-edff2d0a7499)*
+*[Medium article link](https://medium.com/@smitmalik/when-mmm-and-incrementality-disagree-what-is-each-actually-telling-us-edff2d0a7499)*
 
 **Upcoming articles:**
 
